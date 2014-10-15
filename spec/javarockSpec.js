@@ -43,5 +43,13 @@ describe('javarock', function(){
 		it('paper vs rock then paper will win', function(){
 			expect(javarock.winningOption(paper, rock)).toEqual('paper')
 		});
+
+		it('rock vs paper then paper will win', function(){
+			expect(javarock.winningOption(rock, paper)).toEqual('paper')
+		});
+
+		it('scissors vs paper then scissors will win', function(){
+			expect(javarock.winningOption(scissors, paper)).toEqual('scissors')
+		});
 	});
 });

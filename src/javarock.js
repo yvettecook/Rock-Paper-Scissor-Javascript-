@@ -18,5 +18,5 @@ function Javarock(){};
 Javarock.prototype.winningOption = function(choiceOne, choiceTwo) {
 	if (choiceOne.type === choiceTwo.type) return 'draw';
 	if (choiceOne.weakness === choiceTwo.type) return choiceTwo.type;
-	if (choiceOne.weakness !== choiceTwo.type) return choiceOne.type;
+	else return choiceOne.type;
 };
