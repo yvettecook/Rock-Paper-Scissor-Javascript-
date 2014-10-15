@@ -1,22 +1,25 @@
 function Rock (type) {
 	this.type = 'rock';
-	this.weakness = 'paper';
 }
 
 function Scissors () {
 	this.type = 'scissors';
-	this.weakness = 'rock';
 };
 
 function Paper () {
 	this.type = 'paper';
-	this.weakness = 'scissors';
 };
 
-function Javarock(){};
+function Javarock(){
+	this.trumps = {
+		"rock":"scissors",
+		"paper":"rock",
+		"scissors":"paper"
+	};
+};
 
 Javarock.prototype.winningOption = function(choiceOne, choiceTwo) {
-	if (choiceOne.type === choiceTwo.type) return 'draw';
-	if (choiceOne.weakness === choiceTwo.type) return choiceTwo.type;
-	if (choiceOne.weakness !== choiceTwo.type) return choiceOne.type;
+	if(choiceOne.type === choiceTwo.type) return 'draw';
+	if(this.trumps[choiceOne.type] === choiceTwo.type) return choiceOne.type;
+	else return choiceTwo.type;
 };
