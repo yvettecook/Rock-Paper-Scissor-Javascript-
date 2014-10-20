@@ -1,22 +1,36 @@
 function Rock (type) {
 	this.type = 'rock';
-	this.weakness = 'paper';
 }
 
 function Scissors () {
 	this.type = 'scissors';
-	this.weakness = 'rock';
 };
 
 function Paper () {
 	this.type = 'paper';
-	this.weakness = 'scissors';
 };
 
-function Javarock(){};
+function Lizard () {
+	this.type = 'lizard';
+};
 
-Javarock.prototype.winningOption = function(choiceOne, choiceTwo) {
+function Spock () {
+	this.type = 'spock';
+};
+
+function Game(){};
+
+Game.prototype.winningChoice = function(choiceOne, choiceTwo) {
 	if (choiceOne.type === choiceTwo.type) return 'draw';
-	if (choiceOne.weakness === choiceTwo.type) return choiceTwo.type;
-	else return choiceOne.type;
+	else if (this.WINNINGPAIRS[choiceOne.type][choiceTwo.type] != undefined) 
+		return choiceOne.type;
+ 	else	return choiceTwo.type;
 };
+
+Game.prototype.WINNINGPAIRS = {
+	"rock": { "scissors": 'blunt', "lizard": 'crushes' },
+	"paper": { "rock": 'covers', "spock": 'disproves' },
+	"scissors": { "paper": 'cuts', "lizard": 'decapitates' },
+	"spock": { "scissors": 'smashes', "rock": 'vaporizes' },
+	"lizard": { "spock": 'poisons', "paper": 'eats' }
+}

@@ -3,6 +3,8 @@ describe('javarock', function(){
 		rock = new Rock;
 		scissors = new Scissors;
 		paper = new Paper;
+		lizard = new Lizard;
+		spock = new Spock;
 	});
 	
 	describe('has the following types', function(){
@@ -17,39 +19,55 @@ describe('javarock', function(){
 		it('paper', function(){
 			expect(paper.type).toEqual('paper');
 		});
+
+		it ('lizard', function() {
+			expect(lizard.type).toEqual('lizard');
+		});
+
+		it('spock', function() {
+			expect(spock.type).toEqual('spock');
+		});
 	});
 
 	describe('has rules which mean that when', function() {
 		beforeEach(function(){
-			javarock = new Javarock;
+			javarock = new Game;
 		});
 		
 		it('rock vs. rock it returns draw', function() {
-			expect(javarock.winningOption(rock, rock)).toEqual('draw')
+			expect(javarock.winningChoice(rock, rock)).toEqual('draw')
 		});
 		
-		it('rock vs scissors then rock will win', function() {
-			expect(javarock.winningOption(rock, scissors)).toEqual('rock')
+		it('rock vs scissors: rock will win', function() {
+			expect(javarock.winningChoice(rock, scissors)).toEqual('rock')
 		});
 
-		it('scissors vs rock then rock will win', function() {
-			expect(javarock.winningOption(scissors, rock)).toEqual('rock')
+		it('scissors vs rock: rock will win', function() {
+			expect(javarock.winningChoice(scissors, rock)).toEqual('rock')
 		});
 
-		it('rock vs paper then paper will win', function() {
-			expect(javarock.winningOption(rock, paper)).toEqual('paper')
+		it('rock vs paper: paper will win', function() {
+			expect(javarock.winningChoice(rock, paper)).toEqual('paper')
 		});
 
-		it('paper vs rock then paper will win', function(){
-			expect(javarock.winningOption(paper, rock)).toEqual('paper')
+		it('paper vs rock: paper will win', function(){
+			expect(javarock.winningChoice(paper, rock)).toEqual('paper')
 		});
 
-		it('rock vs paper then paper will win', function() {
-			expect(javarock.winningOption(rock, paper)).toEqual('paper')
+		it('rock vs paper: paper will win', function() {
+			expect(javarock.winningChoice(rock, paper)).toEqual('paper')
 		});
 
-		it('scissors vs paper then scissors will win', function() {
-			expect(javarock.winningOption(scissors, paper)).toEqual('scissors')
+		it('scissors vs paper: scissors will win', function() {
+			expect(javarock.winningChoice(scissors, paper)).toEqual('scissors')
+		});
+
+		it('scissors vs lizard: scissors will win', function() {
+			expect(javarock.winningChoice(scissors, lizard)).toEqual('scissors')
+		});
+
+		it('scissors vs spock: spock will win', function() {
+			expect(javarock.winningChoice(scissors, spock)).toEqual('spock')
 		});
 	});
 });
