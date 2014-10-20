@@ -24,15 +24,15 @@ describe('javarock', function(){
 			javarock = new Javarock;
 		});
 		
-		it('rock vs. rock it returns draw', function(){
+		it('rock vs. rock it returns draw', function() {
 			expect(javarock.winningOption(rock, rock)).toEqual('draw')
 		});
 		
-		it('rock vs scissors then rock will win', function(){
+		it('rock vs scissors then rock will win', function() {
 			expect(javarock.winningOption(rock, scissors)).toEqual('rock')
 		});
 
-		it('scissors vs rock then rock will win', function(){
+		it('scissors vs rock then rock will win', function() {
 			expect(javarock.winningOption(scissors, rock)).toEqual('rock')
 		});
 
@@ -44,11 +44,11 @@ describe('javarock', function(){
 			expect(javarock.winningOption(paper, rock)).toEqual('paper')
 		});
 
-		it('rock vs paper then paper will win', function(){
+		it('rock vs paper then paper will win', function() {
 			expect(javarock.winningOption(rock, paper)).toEqual('paper')
 		});
 
-		it('scissors vs paper then scissors will win', function(){
+		it('scissors vs paper then scissors will win', function() {
 			expect(javarock.winningOption(scissors, paper)).toEqual('scissors')
 		});
 	});
