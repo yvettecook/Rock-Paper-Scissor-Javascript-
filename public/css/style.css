@@ -9,17 +9,22 @@ ul {
 
 h4 {
 	text-align: center;
-	font-family: "Courier New", Courier, monospace; 
+	font-family: "Courier New", Courier, monospace;
+	font-weight: 100;
+	font-size:8pt; 
+	
 }
 
 h1 {
 	text-align: center;
 	font-family: "Courier New", Courier, monospace; 
+	font-weight: 100;
 }
 
 h2 {
 	text-align: center;
 	font-family: "Courier New", Courier, monospace; 
+	font-weight: 100;
 }
 
 
