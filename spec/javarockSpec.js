@@ -70,4 +70,8 @@ describe('javarock', function(){
 			expect(javarock.winningChoice(scissors, spock)).toEqual('spock')
 		});
 	});
+
+	describe('when displaying error messages', function() {
+
+	});
 });

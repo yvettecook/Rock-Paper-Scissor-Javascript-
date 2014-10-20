@@ -34,3 +34,5 @@ Game.prototype.WINNINGPAIRS = {
 	"spock": { "scissors": 'smashes', "rock": 'vaporizes' },
 	"lizard": { "spock": 'poisons', "paper": 'eats' }
 }
+
+
