@@ -18,7 +18,7 @@ function Spock () {
 	this.type = 'spock';
 };
 
-function Game(){};
+function Game() {};
 
 Game.prototype.winningChoice = function(choiceOne, choiceTwo) {
 	if (choiceOne.type === choiceTwo.type) return 'draw';
