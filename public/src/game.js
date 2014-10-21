@@ -1,13 +1,24 @@
-var rock_click = function(){
+var choice_click = function(selection){
 	game1 = new Game;
-	choice1 = new Rock;
-	choice2 = computer()
-	return game1.winningChoice(choice1, choice2);
+	choice2 = computer();
+	console.log(selection, choice2);
+	return game1.winningChoice(selection, choice2);
 };
+
 
 var computer = function() {
 	choices = [new Rock, new Paper, new Scissors, new Spock, new Lizard];
 	return choices[Math.floor(Math.random() * choices.length)];
 };
 
-$('#rock').on('click', function(){ $('h3').text('the winner is ' + rock_click())});
+var playerChoices = {rock: new Rock, paper: new Paper, scissors: new Scissors, lizard: new Lizard, spock: new Spock}
+
+var playerChoice = function(image) {
+	return playerChoices[$(image).data('gesture')];
+};
+
+$('img').on('click', function(){ 
+	$('h3').text('the winner is ' + choice_click(playerChoice(this)))
+});
+
+

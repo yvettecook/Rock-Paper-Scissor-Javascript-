@@ -35,4 +35,8 @@ Game.prototype.WINNINGPAIRS = {
 	"lizard": { "spock": 'poisons', "paper": 'eats' }
 }
 
+Game.prototype.winningMessage = function() {
+	
+};
+
 
