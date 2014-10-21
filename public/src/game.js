@@ -18,7 +18,9 @@ var playerChoice = function(image) {
 };
 
 $('img').on('click', function(){ 
-	$('h3').text('the winner is ' + choice_click(playerChoice(this)))
+	$('h3').text(choice_click(playerChoice(this)))
 });
+
+
 
 

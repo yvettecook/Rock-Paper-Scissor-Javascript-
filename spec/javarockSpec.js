@@ -71,7 +71,15 @@ describe('javarock', function(){
 		});
 	});
 
-	describe('when displaying error messages', function() {
+	describe('when displaying result messages', function() {
+
+		it('rock vs scissors: rock blunts scissors', function() {
+			expect(javarock.winningMessage(rock, scissors)).toEqual('rock blunts scissors');
+		});
+
+		it('rock vs scissors: scissors blunts paper', function() {
+			expect(javarock.winningMessage(scissors, paper)).toEqual('scissors cut paper');
+		});
 
 	});
 });
